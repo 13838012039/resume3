@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: normal;
+    font-weight: normal;
 }
 
 ul,
@@ -40,6 +40,7 @@ ol {
     background: rgba(0, 0, 0, 0.9);
     position: fixed;
     width: 100%;
+    z-index: 2;
 }
 
 .logoAndNav .logo {
@@ -105,6 +106,8 @@ ol {
     width: 960px;
     margin: 0 auto;
     background: white;
+    margin-top: -340px;
+    box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
 }
 
 .imgAndAvatar {
@@ -181,4 +184,156 @@ footer.media a svg {
     fill: white;
     height: 30px;
     width: 30px;
+}
+
+main .downloadResume {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border-radius: 2px;
+    font-weight: bold;
+    color: #6A6C73;
+    border: 1px solid #D4D3D4;
+    margin: 32px 0;
+    transition: box-shadow 0.1s;
+}
+
+main .downloadResume:hover {
+    box-shadow: -1px 5px 14px 0px rgba(50, 50, 50, 0.2);
+}
+
+main .contain {
+    text-align: center;
+}
+
+main .selfIntroduction {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+    font-family: kai;
+    color: #434753;
+}
+
+.skills,
+.portfolio {
+    color: #434753;
+    max-width: 940px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.skills .skills-ol {
+    margin-top: 30px;
+    padding: 42px 50px 10px;
+    background: white;
+    box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.5);
+}
+
+.skills h2,
+.portfolio h2 {
+    text-align: center;
+    color: #434753;
+}
+
+.skills .skills-ol li .prograssBar {
+    height: 3px;
+    background: #FEE4E0;
+    margin: 4px 0;
+}
+
+.skills .skills-ol .prograss {
+    height: 100%;
+    background: #E97669;
+    width: 70%;
+}
+
+.skills .skills-ol li {
+    width: 48%;
+    float: left;
+    margin-bottom: 40px;
+}
+
+.skills .skills-ol li:nth-child(odd) {
+    float: right;
+}
+
+.portfolio {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.portfolio nav {
+    margin-top: 32px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.portfolio nav ol {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.portfolio nav li {
+    font-weight: bold;
+    float: left;
+    margin-left: 32px;
+    cursor: pointer;
+}
+
+.portfolio nav li:first-child {
+    margin-left: 0;
+}
+
+.portfolio nav .bar {
+    height: 5px;
+    background: white;
+}
+
+.portfolio nav .bar .bar-inner {
+    height: 100%;
+    background: #E06567;
+    transition: all 0.3s;
+}
+
+.portfolio nav .bar.state-1 .bar-inner {
+    width: 50px;
+    margin-left: 0;
+}
+
+.portfolio nav .bar.state-2 .bar-inner {
+    width: 50px;
+    margin-left: 65px;
+}
+
+.portfolio nav .bar.state-3 .bar-inner {
+    width: 90px;
+    margin-left: 135px;
+}
+
+.portfolio .works {
+    height: 597px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.portfolio .works div {
+    position: absolute;
+}
+
+.portfolio .works div img {
+    border-radius: 10px;
+    vertical-align: top;
+}
+
+.portfolio .works .small1 {
+    top: 0;
+    right: 0;
+}
+
+.portfolio .works .small2 {
+    bottom: 0;
+    right: 0;
 }

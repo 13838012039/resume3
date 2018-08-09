@@ -84,30 +84,85 @@
 
 
         </div>
-        <a class="button" href="#">下载PDF简历</a>
-        <p>李文瀚， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br> 技能：前端开发，Rails 开发，Node.js 开发</p>
+        <p class="contain">
+            <a class="downloadResume" href="./resume.pdf" download>下载PDF简历</a>
+        </p>
+        <p class="selfIntroduction">李文瀚， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br> 技能：前端开发，Rails 开发，Node.js 开发</p>
         <section class="skills">
             <h2>技能</h2>
             <nav>
-                <ol>
-                    <li>HTML5&CSS3</li>
-                    <li>JavaScript</li>
-                    <li>jQuery</li>
-                    <li>Vue</li>
-                    <li>React</li>
-                    <li>HTTP</li>
+                <ol class="skills-ol clearfix">
+                    <li>
+                        <h3>HTML5&CSS3</h3>
+                        <div class="prograssBar">
+                            <div class="prograss"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>JavaScript</h3>
+                        <div class="prograssBar">
+                            <div class="prograss"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>jQuery</h3>
+                        <div class="prograssBar">
+                            <div class="prograss"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Vue</h3>
+                        <div class="prograssBar">
+                            <div class="prograss"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>React</h3>
+                        <div class="prograssBar">
+                            <div class="prograss"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>HTTP</h3>
+                        <div class="prograssBar">
+                            <div class="prograss"></div>
+                        </div>
+                    </li>
                 </ol>
             </nav>
         </section>
-        <section class="works">
+        <section class="portfolio">
             <h2>作品集</h2>
             <nav>
-                <ol>
-                    <li>所有</li>
-                    <li>框架</li>
-                    <li>原生JS&CSS</li>
+                <ol class="clearfix">
+                    <li id="portfolioAll">所有</li>
+                    <li id="portfolioFramework">框架</li>
+                    <li id="portfolioVallina">原生JS&CSS</li>
                 </ol>
+                <div id="portfolioBar" class="bar state-1">
+                    <div class="bar-inner">
+
+                    </div>
+                </div>
             </nav>
+            <script>
+                portfolioAll.onclick = function() {
+                    portfolioBar.className = "bar state-1";
+                }
+                portfolioFramework.onclick = function() {
+                    portfolioBar.className = "bar state-2";
+                }
+                portfolioVallina.onclick = function() {
+                    portfolioBar.className = "bar state-3";
+                }
+            </script>
+            <div class="works">
+                <div class="big">
+                    <img src="./img/1.jpg" alt="1" width="450" height="597">
+                </div>
+                <div class="small1"><img src="./img/2.jpg" alt="2" width="400"></div>
+                <div class="small2"><img src="./img/3.jpg" alt="3" width="400"></div>
+            </div>
         </section>
     </main>
 </body>
