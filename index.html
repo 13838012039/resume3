@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <div class="siteWelcom active" id="siteWelcom">
+        <div class="loading"></div>
+    </div>
+
     <div class="logoAndNav">
         <div class="logoAndNav-inner clearfix">
             <div class="logo">
@@ -165,6 +169,12 @@
             </div>
         </section>
     </main>
+
+
+    <script>
+        siteWelcom.classList.remove('active');
+        siteWelcom.classList.add('unactive');
+    </script>
 </body>
 
 
