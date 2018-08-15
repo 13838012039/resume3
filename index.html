@@ -172,8 +172,10 @@
 
 
     <script>
-        siteWelcom.classList.remove('active');
-        siteWelcom.classList.add('unactive');
+        setTimeout(function() {
+            siteWelcom.classList.remove('active');
+            siteWelcom.classList.add('unactive');
+        }, 3000)
     </script>
 </body>
 
