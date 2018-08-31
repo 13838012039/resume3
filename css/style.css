@@ -471,6 +471,44 @@ section.skills.offset .prograss {
     right: 0;
 }
 
+.portfolio .swiper-container {
+    width: 800px;
+    height: 460px;
+}
+
+.portfolio .swiper-slide {
+    background: #ccc;
+}
+
+.portfolio h2 {
+    margin-bottom: 28px;
+}
+
+
+/* .portfolio .wrap {
+    position: absolute;
+    background: white;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+} */
+
+.portfolio .swiper-button-prev,
+.portfolio .swiper-button-next {
+    height: 64px;
+    width: 64px;
+    right: 100%;
+    left: auto;
+}
+
+.portfolio .swiper-button-next {
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    left: 100%;
+    right: auto;
+}
+
 .loading {
     height: 200px;
     width: 200px;

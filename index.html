@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-    <script src="//at.alicdn.com/t/font_784483_1mfqcxy3xy8.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>resume-2.0</title>
     <style type="text/css">
         .icon {
@@ -20,10 +19,64 @@
     </style>
 </head>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
     <div class="siteWelcom active" id="siteWelcom">
         <div class="loading"></div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="logoAndNav" id="logoAndNav">
         <div class="logoAndNav-inner clearfix">
@@ -31,6 +84,17 @@
                 <span class="rs">RS</span><span class="card">card</span>
             </div>
             <div class="nav">
+
+
+
+
+
+
+
+
+
+
+
                 <nav class="menu">
                     <ul class="clearfix">
                         <li><a href="#siteAbouts">关于</a></li>
@@ -56,12 +120,40 @@
                 </nav>
             </div>
         </div>
-
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <main>
         <div class="banner">
             <div class="mask"></div>
         </div>
+
+        <style>
+            .swiper-container {
+                width: 600px;
+                height: 300px;
+            }
+        </style>
+
         <div data-x class="userCard" id="siteAbouts">
             <div class="imgAndAvatar clearfix">
                 <div class=></div>
@@ -148,185 +240,129 @@
                 </ol>
             </nav>
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section data-x class="portfolio" id="siteWorks">
             <h2>作品集</h2>
-            <nav>
-                <ol class="clearfix">
-                    <li id="portfolioAll">所有</li>
-                    <li id="portfolioFramework">框架</li>
-                    <li id="portfolioVallina">原生JS&CSS</li>
-                </ol>
-                <div id="portfolioBar" class="bar state-1">
-                    <div class="bar-inner">
+
+
+
+            <div id="mySlides">
+                <!-- Slider main container -->
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <img class="swiper-slide" src="./img/works/1.jpg">
+                        <img class="swiper-slide" src="./img/works/2.png">
+                        <img class="swiper-slide" src="./img/works/3.png">
 
                     </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
-            </nav>
-            <script>
-                portfolioAll.onclick = function() {
-                    portfolioBar.className = "bar state-1";
-                }
-                portfolioFramework.onclick = function() {
-                    portfolioBar.className = "bar state-2";
-                }
-                portfolioVallina.onclick = function() {
-                    portfolioBar.className = "bar state-3";
-                }
-            </script>
-            <div class="works">
-                <div class="big">
-                    <img src="./img/1.jpg" alt="1" width="450" height="597">
-                </div>
-                <div class="small1"><img src="./img/2.jpg" alt="2" width="400"></div>
-                <div class="small2"><img src="./img/3.jpg" alt="3" width="400"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
+
+
+
+
+
+
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            setTimeout(function() {
+                siteWelcom.classList.remove('active');
+                siteWelcom.classList.add('unactive');
+            }, 500)
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+        <!-- 模块化 -->
+        <script src="./js/auto-slide-up.js"></script>
+        <script src="./js/sticky-topbar.js"></script>
+        <script src="./js/smoothly.js"></script>
+        <script src="./js/init_swiper.js"></script>
+
+
+        <script src="./js/module1.js"></script>
+        <script src="./js/module2.js"></script>
     </main>
 
 
-    <script>
-        setTimeout(function() {
-            siteWelcom.classList.remove('active');
-            siteWelcom.classList.add('unactive');
-        }, 0)
-
-
-        let specialTags = document.querySelectorAll('[data-x]');
-        for (let i = 0; i < specialTags.length; i++) {
-            specialTags[i].classList.add('offset');
-        }
-
-        findClosest();
-        window.onscroll = function(x) {
-            if (window.scrollY > 0) {
-                logoAndNav.classList.add('sticky');
-            } else {
-                logoAndNav.classList.remove('sticky');
-            }
-
-
-
-
-            findClosest();
-
-
-        }
-
-
-
-        function findClosest() {
-
-
-            let specialTags = document.querySelectorAll('[data-x]');
-            let minIndex = 0;
-            for (let i = 1; i < specialTags.length; i++) {
-
-                if (Math.abs(specialTags[minIndex].offsetTop - window.scrollY) > Math.abs(specialTags[i].offsetTop - window.scrollY)) {
-                    minIndex = i;
-                }
-
-            }
-
-            specialTags[minIndex].classList.remove('offset');
-
-            let id = specialTags[minIndex].id;
-            let a = document.querySelector('a[href="#' + id + '"]');
-            let li = a.parentNode
-
-            let brothersAndMe = li.parentNode.children
-            for (let i = 0; i < brothersAndMe.length; i++) {
-                brothersAndMe[i].classList.remove('highLight');
-            }
-            li.classList.add('highLight')
-        }
-
-
-
-
-        let liTags = document.querySelectorAll('nav.menu > ul > li');
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function(x) {
-                let li = x.currentTarget
-                li.classList.add('active');
-
-            }
-            liTags[i].onmouseleave = function(x) {
-                let li = x.currentTarget
-                li.classList.remove('active');
-
-            }
-        }
-        let aTags = document.querySelectorAll('nav.menu>ul>li>a')
-
-
-
-
-        // Setup the animation loop.
-        function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time);
-        }
-        requestAnimationFrame(animate);
-        for (let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function(x) {
-                x.preventDefault()
-                let a = x.currentTarget
-                let href = a.getAttribute('href')
-                let element = document.querySelector(href)
-
-                let targerTop = element.offsetTop - 80;
-                // window.scrollTo(0, top - 80);
-
-
-                // let n = 60;
-                // let duration = 200 / n;
-                let currentTop = window.scrollY;
-                s = targerTop - currentTop;
-                // let distance = (targerTop - currentTop) / n;
-                // let i = 0;
-
-
-                // let id = setInterval(() => {
-
-                //     if (i === n) {
-                //         window.clearInterval(id);
-                //         return
-                //     }
-
-                //     i++;
-                //     window.scrollTo(0, currentTop + distance * i);
-                // }, duration);
-
-
-
-
-
-                let time = (s / 100) * 300;
-                time = Math.abs(time);
-                if (time > 500) {
-                    time = 500;
-                }
-                var coords = {
-
-                    y: currentTop
-                }; // Start at (0, 0)
-                var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-                    .to({
-
-                        y: targerTop
-                    }, time) // Move to (300, 200) in 1 second.
-
-                .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
-                    .onUpdate(function() {
-                        window.scroll(0, coords.y);
-                    })
-                    .start(); // Start the tween immediately.
-
-
-            }
-        }
-    </script>
 </body>
+
+<script src="//at.alicdn.com/t/font_784483_1mfqcxy3xy8.js"></script>
 
 
 </html>
