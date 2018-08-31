@@ -304,7 +304,24 @@
 
 
 
+        <section class="message">
 
+            <h2>留言板</h2>
+            <ol id="messageList">
+
+            </ol>
+            <form id="postMessageForm">
+                <label>姓名<input type="text" name="name"></label>
+                <label>内容<input type="text" name="content"></label>
+                <input type="submit" value="提交">
+            </form>
+        </section>
+        <style>
+            #postMessageForm {
+                width: 700px;
+                margin: 50px auto;
+            }
+        </style>
 
 
 
@@ -348,6 +365,7 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
         <!-- 模块化 -->
         <script src="./js/auto-slide-up.js"></script>
         <script src="./js/sticky-topbar.js"></script>
@@ -357,6 +375,7 @@
 
         <script src="./js/module1.js"></script>
         <script src="./js/module2.js"></script>
+        <script src="./js/message.js"></script>
     </main>
 
 
