@@ -1,18 +1,8 @@
 ! function() {
     var view = document.querySelector('section.message')
-    var controller = {
-        view: null,
-        messageList: null,
-        form: null,
-        init: function(view) {
-            this.view = view
-            this.messageList = view.querySelector('#messageList')
-            this.form = view.querySelector('#postMessageForm')
-            this.initAV()
-            this.loadMessages()
-            this.bindEvents()
-        },
-        initAV: function() {
+
+    var model = {
+        init: function() {
             var APP_ID = 'ySmdY9GX63D3F15CMFaOnPc7-gzGzoHsz';
             var APP_KEY = 'tP6AYDHargVJmsN7MmoMvlcx';
 
@@ -21,9 +11,38 @@
                 appKey: APP_KEY
             });
         },
-        loadMessages: function() {
+        fetch: function() {
             var query = new AV.Query('Message');
-            query.find().then((messages) => {
+            return query.find()
+        },
+        save: function(name, content) {
+            var Message = AV.Object.extend('Message');
+            var message = new Message();
+            return message.save({
+                name: name,
+                content: content
+            })
+        }
+    }
+
+
+    var controller = {
+        view: null,
+        model = null,
+        messageList: null,
+        form: null,
+        init: function(view) {
+            this.view = view
+            this.model = model
+            this.messageList = view.querySelector('#messageList')
+            this.form = view.querySelector('#postMessageForm')
+            this.model.init()
+            this.loadMessages()
+            this.bindEvents()
+        },
+
+        loadMessages: function() {
+            model.fetch().then((messages) => {
 
                 let array = messages.map((item) => item.attributes)
 
@@ -49,12 +68,7 @@
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            var Message = AV.Object.extend('Message');
-            var message = new Message();
-            message.save({
-                name: name,
-                content: content
-            }).then(function(object) {
+            model.save(name, content).then(function(object) {
                 console.log('存入成功')
                 console.log(object)
                 let li = document.createElement('li')
