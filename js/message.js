@@ -28,10 +28,10 @@
 
     var controller = {
         view: null,
-        model = null,
+        model: null,
         messageList: null,
         form: null,
-        init: function(view) {
+        init: function(view, model) {
             this.view = view
             this.model = model
             this.messageList = view.querySelector('#messageList')
@@ -58,13 +58,12 @@
             });
         },
         bindEvents: function() {
-
-            this.form.addEventListener('submit', function(e) {
+            this.form.addEventListener('submit', (e) => {
                 e.preventDefault()
-
+                this.saveMessage()
             })
         },
-        x: function() {
+        saveMessage: function() {
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
@@ -84,7 +83,7 @@
 
 
 
-
+    controller.init(view, model)
 
 
 
