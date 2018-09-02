@@ -1,48 +1,20 @@
 ! function() {
+
     var view = document.querySelector('section.message')
 
-    var model = {
-        init: function() {
-            var APP_ID = 'ySmdY9GX63D3F15CMFaOnPc7-gzGzoHsz';
-            var APP_KEY = 'tP6AYDHargVJmsN7MmoMvlcx';
+    var model = Model({ resourceName: 'Message' })
 
-            AV.init({
-                appId: APP_ID,
-                appKey: APP_KEY
-            });
-        },
-        fetch: function() {
-            var query = new AV.Query('Message');
-            return query.find()
-        },
-        save: function(name, content) {
-            var Message = AV.Object.extend('Message');
-            var message = new Message();
-            return message.save({
-                name: name,
-                content: content
-            })
-        }
-    }
-
-
-    var controller = {
-        view: null,
-        model: null,
+    var controller = Controller({
         messageList: null,
         form: null,
-        init: function(view, model) {
-            this.view = view
-            this.model = model
+        init: function(view, controller) {
             this.messageList = view.querySelector('#messageList')
             this.form = view.querySelector('#postMessageForm')
-            this.model.init()
-            this.loadMessages()
-            this.bindEvents()
-        },
 
+            this.loadMessages()
+        },
         loadMessages: function() {
-            model.fetch().then((messages) => {
+            this.model.fetch().then((messages) => {
 
                 let array = messages.map((item) => item.attributes)
 
@@ -67,7 +39,7 @@
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            model.save(name, content).then(function(object) {
+            this.model.save({ name: name, content: content }).then(function(object) {
                 console.log('存入成功')
                 console.log(object)
                 let li = document.createElement('li')
@@ -77,7 +49,9 @@
                 myForm.querySelector('input[name=name]').value = ''
             })
         }
-    }
+    })
+
+
 
 
 
