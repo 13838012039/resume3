@@ -1,0 +1,23 @@
+{
+    "name": "resume3",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "babel src -d lib"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/13838012039/resume3.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/13838012039/resume3/issues"
+    },
+    "homepage": "https://github.com/13838012039/resume3#readme",
+    "devDependencies": {
+        "babel-cli": "^6.0.0"
+    }
+}
